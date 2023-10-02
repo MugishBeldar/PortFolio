@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import HeroBgAnimation from '../HeroBgAnimation'
 import {HeroContainer, HeroBg, HeroLeftContainer, HeroRightContainer, HeroInnerContainer, TextLoop, Title, Span, SubTitle, ResumeButton, } from './HeroStyle'
 import Typewriter from 'typewriter-effect';
@@ -9,9 +9,11 @@ import {SiMysql} from 'react-icons/si'
 import {BiLogoMongodb} from 'react-icons/bi'
 import {SiCockroachlabs, } from 'react-icons/si'
 import {SiSequelize} from 'react-icons/si'
+import {ThemeContext} from '../../context/theme'
+import {darkTheme, lightTheme} from '../../utils/Themes'
 
 const HeroSection = () => {
-   
+    const {theme} = useContext(ThemeContext)
     return (
         <div id="about">
             <HeroContainer>
@@ -34,7 +36,7 @@ const HeroSection = () => {
                             </Span>
                         </TextLoop>
                         <SubTitle>{Bio.description}</SubTitle>
-                        <ResumeButton href='https://drive.google.com/file/d/11XUZ5J4bOR-u-v5qaqQJIghnz1070yOi/view?usp=sharing' target='_blank'>View & Download Resume</ResumeButton>
+                        <ResumeButton style={{color:`${theme==='darkTheme'?darkTheme.color:lightTheme.color}`}} href='https://drive.google.com/file/d/11XUZ5J4bOR-u-v5qaqQJIghnz1070yOi/view?usp=sharing' target='_blank'>View & Download Resume</ResumeButton>
 
                     </HeroLeftContainer>
 

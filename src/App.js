@@ -1,4 +1,7 @@
 import {ThemeProvider} from "styled-components";
+import React, { useContext } from "react";
+import {ThemeContext} from './context/theme'
+
 import {useState} from "react";
 import {darkTheme, lightTheme} from './utils/Themes.js'
 import Navbar from "./components/Navbar";
@@ -26,10 +29,10 @@ const Wrapper = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 100%,30% 98%, 0 100%);
 `
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const { theme } = useContext(ThemeContext);
   const [openModal, setOpenModal] = useState({state: false, project: null});
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+    <ThemeProvider theme={theme==='darkTheme' ? darkTheme : lightTheme}>
       <Router >
         <Navbar />
         <Body>

@@ -9,6 +9,7 @@ export const darkTheme = {
     button:"#854CE6",
     white:"#FFFFFF",
     black:"#000000",
+    color: 'white'
 }
 
 export const lightTheme = {
@@ -19,4 +20,6 @@ export const lightTheme = {
     text_secondary:"#48494a",
     card:"#FFFFFF",
     button:"#5c5b5b",
+    color: 'black',
+    navBackgroundColor: '#FFFDFA'
 }
