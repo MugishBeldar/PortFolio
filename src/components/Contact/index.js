@@ -126,17 +126,35 @@ const Contact = () => {
 
   //hooks
   const [open, setOpen] = React.useState(false);
+  const [contactValue, setContactValue] = React.useState({
+    email: null,
+    name: null,
+    subject: null,
+    message: null,
+  })
   const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_d2yz6yp', 'template_sjthggy', form.current, 'Tn_kdjXmD05VzIhdL')
+    if (contactValue.email && contactValue.name && contactValue.subject && contactValue.message) {
+      emailjs.sendForm('service_d2yz6yp', 'template_sjthggy', form.current, 'Tn_kdjXmD05VzIhdL')
       .then((result) => {
         setOpen(true);
         form.current.reset();
       }, (error) => {
         console.log(error.text);
       });
+    } else {
+      alert('Email, Name, Subject and Message are required');
+    }
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setContactValue(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   }
 
 
@@ -148,16 +166,16 @@ const Contact = () => {
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
+          <ContactInput onChange={handleChange} placeholder="Your Email" name="email" />
+          <ContactInput onChange={handleChange} placeholder="Your Name" name="name" />
+          <ContactInput onChange={handleChange} placeholder="Subject" name="subject" />
+          <ContactInputMessage onChange={handleChange} placeholder="Message" rows="4" name="message" />
           <ContactButton type="submit" value="Send" />
         </ContactForm>
         <Snackbar
           open={open}
           autoHideDuration={6000}
-          onClose={()=>setOpen(false)}
+          onClose={() => setOpen(false)}
           message="Email sent successfully!"
           severity="success"
         />
