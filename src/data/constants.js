@@ -18,6 +18,34 @@ import githubImage from '../assets/github.png';
 import gitImage from '../assets/gitimage.png';
 import vsCodeImage from '../assets/Visual_Studio_Code_1.35_icon.svg.png';
 import postManImage from '../assets/postman.png';
+import zentalkPcLoginImage from '../assets/zentalk-pc-login.png';
+import zentalkPcSignupImage from '../assets/zentalk-pc-signup-page.png';
+import zentalkPcChatListAndChatAreaImage from '../assets/zentalk-pc-initial-starting-page.png';
+import zentalkPcSearchImage from '../assets/zentalk-pc-search-drop-down-page.png';
+import zentalkPcSettingImage from '../assets/zentalk-pc-setting-page.png';
+import zentalkMobileLoginImage from '../assets/zentalk-mobile-login.png';
+import zentalkMobileSignUpImage from '../assets/zentalk-mobile-signup.png';
+import zentalkMobileChatListImage from '../assets/zentalk-mobile-chat-screen.png';
+import zentalkMobileChatAreaImage from '../assets/zentalk-mobile-chat-area-screen.png';
+import zentalkMobileContextMenuImage from '../assets/zentalk-mobile-context-menu.png';
+import zentalkMobileSettingImage from '../assets/zentalk-mobile-setting.png';
+
+export const pcZentalkImages = [
+  zentalkPcLoginImage,
+  zentalkPcSignupImage,
+  zentalkPcChatListAndChatAreaImage,
+  zentalkPcSearchImage,
+  zentalkPcSettingImage,
+];
+
+export const mobileZentalkImages = [
+  zentalkMobileLoginImage,
+  zentalkMobileSignUpImage,
+  zentalkMobileChatListImage,
+  zentalkMobileChatAreaImage,
+  zentalkMobileContextMenuImage,
+  zentalkMobileSettingImage,
+]
 
 export const Bio = {
   name: "Mugish Beldar",
@@ -228,7 +256,13 @@ export const projects = [
     date: "May 2023 - Jun 2023",
     description:
       "ZenTalk is a real-time chat application built using a modern technology stack. The backend leverages Node.js and Express.js for robust API handling, while MongoDB serves as the database for storing chat messages and user data. To enable real-time communication, Socket.io is employed, facilitating instant messaging between users. On the frontend, React.js is used to create an intuitive and responsive user interface, ensuring an engaging chat experience. The combination of these technologies allows ZenTalk to deliver seamless, real-time communication in a user-friendly environment, making it a compelling choice for interactive conversations and collaborative discussions.",
-    image: zentTalkProjectImage,
+    image: [{
+      imagesFor: 'pc',
+      images: pcZentalkImages
+    }, {
+      imagesFor: 'mobile',
+      images: mobileZentalkImages
+    }],
     tags: [
       "Node Js",
       "Express Js",

@@ -1,4 +1,5 @@
 import React from 'react'
+import zentalkPcChatListAndChatAreaImage from '../../assets/zentalk-pc-initial-starting-page.png';
 import styled from 'styled-components'
 
 
@@ -122,13 +123,15 @@ const Avatar = styled.img`
     border: 3px solid ${({ theme }) => theme.card};
 `
 
-const ProjectCards = ({project,setOpenModal}) => {
+const ProjectCards = ({ project, setOpenModal }) => {
     return (
-        <Card onClick={() => setOpenModal({state: true, project: project})}>
-            <Image src={project.image}/>
+        <Card onClick={() => setOpenModal({ state: true, project: project })}>
+            {
+                Array.isArray(project.image) ? <Image src={zentalkPcChatListAndChatAreaImage}/> : <Image src={project.image} />
+            }
             <Tags>
                 {project.tags?.map((tag, index) => (
-                <Tag key={index}>{tag}</Tag>
+                    <Tag key={index}>{tag}</Tag>
                 ))}
             </Tags>
             <Details>
@@ -138,7 +141,7 @@ const ProjectCards = ({project,setOpenModal}) => {
             </Details>
             <Members>
                 {project.member?.map((member, index) => (
-                    <Avatar key={index} src={member.img}/>
+                    <Avatar key={index} src={member.img} />
                 ))}
             </Members>
             {/* <Button>View Project</Button> */}
