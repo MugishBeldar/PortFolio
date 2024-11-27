@@ -265,14 +265,19 @@ export const projects = [
     tags: [
       "Node Js",
       "Express Js",
+      'Redis',
       "React Js",
       "MongoDB",
       "Socket.io",
       "TailwindCss",
       "MaterialUi",
-      "TypeScript"
+      "TypeScript",
+      'Redux',
+
     ],
     github: 'https://github.com/MugishBeldar/zen-talk',
+    liveLink: 'https://zen-talk.vercel.app'
+
   },
   {
     id: 3,
@@ -290,6 +295,7 @@ export const projects = [
       "OpenWeatherMap"
     ],
     github: 'https://github.com/MugishBeldar/Weather-Application',
+    liveLink: 'https://breeze-lake.vercel.app/weather'
   },
 ];
 

@@ -1,17 +1,17 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import { Paper } from '@mui/material';
+import { Button, ButtonGroup, Paper } from '@mui/material';
 import styled from 'styled-components';
 
 const PcImage = styled.img`
     width: 100%;
-    height: auto; /* Auto height to maintain aspect ratio */
+    height: auto /* Auto height to maintain aspect ratio */
     background-color: ${({ theme }) => theme.white || '#fff'};
     border-radius: 10px;
 
     /* Media query for smaller screens */
     @media (max-width: 768px) {
-        height: 300px; /* Adjust height for tablets and smaller devices */
+        height: 180; /* Adjust height for tablets and smaller devices */
     }
 `;
 
@@ -24,12 +24,12 @@ const MobileImage = styled.img`
     /* Media query for smaller screens */
     @media (max-width: 768px) {
         width: 50%; /* Adjust width for tablets and smaller devices */
-        height: 300px; /* Adjust height for better scaling */
+        height: 400px; /* Adjust height for better scaling */
     }
 
     @media (max-width: 480px) {
         width: 80%; /* Adjust width further for mobile devices */
-        height: 250px; /* Further adjust height for small mobile devices */
+        height: 450px; /* Further adjust height for small mobile devices */
     }
 `;
 
@@ -40,12 +40,13 @@ const Container = styled.div`
   margin-top: 20px
 `;
 
+
 function Item({ item }) {
   return (
     <Paper style={{ padding: '16px', textAlign: 'center', margin: '10 0 10 0' }}>
       <Carousel
         autoPlay={true}
-        navButtonsAlwaysVisible={true}
+        // navButtonsAlwaysVisible={true}
         animation='fade'
       >
         {item.imagesFor.toLowerCase() === 'pc' ? (
