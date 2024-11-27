@@ -2,7 +2,6 @@ import { CloseRounded, GitHub, LinkedIn } from "@mui/icons-material";
 import { Modal } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-import zentalkPcChatListAndChatAreaImage from "../../assets/zentalk-pc-initial-starting-page.png";
 import ImageCarousel from "../ImageCarousel";
 
 const Container = styled.div`

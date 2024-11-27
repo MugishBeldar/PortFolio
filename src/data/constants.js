@@ -1,5 +1,4 @@
 import emailClientProjectImage from '../assets/email_client_project.png';
-import zentTalkProjectImage from '../assets/zen_talk_projet_image.png';
 import breezeWeatherApplicatioProjectImage from '../assets/breeze_weather_project_image.png'
 import nodeJsImage from '../assets/nodejsLight.svg';
 import reactJsImage from '../assets/reactjs.svg';
